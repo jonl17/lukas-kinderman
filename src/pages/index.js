@@ -7,7 +7,7 @@ export default ({ data }) => {
   if (!prismicContent) return null
   const document = prismicContent.node
   return (
-    <div className="image-grid w-100">
+    <div className="image-grid w-100 mt-md-n5">
       <SliceZone sliceZone={document.body} />
     </div>
   )

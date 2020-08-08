@@ -1,15 +1,15 @@
 import React from "react"
-
-/** components */
-import { GlobalStyle } from "../components/GlobalStyle"
 import Header from "../components/Header"
+import "./styles.scss"
 
 const Layout = ({ children }) => {
   return (
-    <div className="px-5">
+    <>
       <Header />
-      <div>{children}</div>
-    </div>
+      <div className="px-2 px-md-5 mainContentWrap">
+        <div>{children}</div>
+      </div>
+    </>
   )
 }
 

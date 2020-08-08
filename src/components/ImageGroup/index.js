@@ -11,15 +11,21 @@ const ImageGroup = ({ slice }) => {
     between: "justify-content-between",
   }
   return (
-    <div className={`d-flex w-100 my-5 mx-n3 ${alignmentClass[primary.align]}`}>
+    <div
+      className={`d-flex flex-wrap w-100 my-5 mx-md-n3 imageGroupWrap ${
+        alignmentClass[primary.align]
+      }`}
+    >
       {fields &&
         fields.map((field, idx) => {
-          const imageClass = fields.length > 1 ? "w-25" : "w-75"
+          const imageClass = fields.length > 1 ? "imageScale" : "w-75"
           return (
             <img
               key={idx}
-              className={cn(imageClass, "p-3 image")}
+              className={cn(imageClass, "p-1 p-md-3 image")}
               src={field.image.url}
+              alt={field.image.alt}
+              onMouseEnter={() => console.log(primary)}
             />
           )
         })}
