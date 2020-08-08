@@ -4,7 +4,7 @@ subtitle: Becky Forsytheee
 frontpage-image-group:
   align: left
   images:
-    - screenshot-2020-08-08-at-12.27.05.png
+    - screenshot-2020-08-08-at-12.27.09.png
     - screenshot-2020-08-08-at-12.27.05.png
 ---
 The sky, as familiar as it is to us, seems infinite and astronomical. Its time is measured in the movement of\
