@@ -1,0 +1,40 @@
+{
+  "name": "lorange-web-site",
+  "private": true,
+  "description": "Rock on!",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
+    "gatsby": "^2.19.12",
+    "gatsby-cli": "^2.8.1",
+    "gatsby-image": "^2.2.29",
+    "gatsby-plugin-layout": "^1.1.18",
+    "gatsby-plugin-netlify-cms": "^4.1.28",
+    "gatsby-plugin-react-redux": "^1.0.10",
+    "gatsby-plugin-sharp": "^2.2.31",
+    "gatsby-plugin-styled-components": "^3.1.11",
+    "gatsby-remark-images": "^3.1.38",
+    "gatsby-remark-relative-images": "^0.2.3",
+    "gatsby-source-filesystem": "^2.1.37",
+    "gatsby-transformer-remark": "^2.6.35",
+    "gatsby-transformer-sharp": "^2.2.23",
+    "netlify-cms-app": "^2.9.7",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4",
+    "styled-components": "^4.4.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
+}
