@@ -4,13 +4,30 @@ backend:
 media_folder: "static/assets"
 public_folder: "assets"
 
-# Verkefni
+# Work
 collections:
-  - name: "verkefni"
-    label: "Verkefni"
-    folder: "static/verkefni"
+  - name: "work"
+    label: "Work"
+    folder: "static/work"
     create: true
+    editor:
+      preview: false
+    path: "{{title}}/index"
+    media_folder: ""
+    public_folder: ""
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Lýsing", name: "lysing", widget: "text" }
-      - { label: "Forsíðu mynd", name: "forsidu-mynd", widget: "image" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", hint: "This could be description of materials used etc...", required: false }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - label: "Frontpage Image Group"
+        name: "frontpage-image-group"
+        widget: "object"
+        fields:
+          - label: "Align content"
+            name: "align"
+            widget: "select"
+            options: ["left", "right", "center", "even", "between"]
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            field: {label: "Image", name: "image", widget: "image"}
