@@ -1,6 +1,6 @@
 ---
 title: Where idea and reality converge
-subtitle: Becky Forsythee
+subtitle: Becky Forsytheee
 frontpage-image-group:
   align: left
   images:
