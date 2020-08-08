@@ -1,6 +1,6 @@
 ---
-title: Mimaki CG-60 SR series
-subtitle: Pigmented Ink on Paper, 61,5×86,7cm, 2020
+title: Where idea and reality converge
+subtitle: Becky Forsythe
 frontpage-image-group:
   align: left
   images:
