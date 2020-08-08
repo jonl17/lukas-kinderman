@@ -2,14 +2,14 @@ import React from "react"
 
 /** components */
 import { GlobalStyle } from "../components/GlobalStyle"
-import { PageContainer } from "./Styled"
+import Header from "../components/Header"
 
 const Layout = ({ children }) => {
   return (
-    <>
-      <GlobalStyle></GlobalStyle>
-      <PageContainer>{children}</PageContainer>
-    </>
+    <div className="px-5">
+      <Header />
+      <div>{children}</div>
+    </div>
   )
 }
 
