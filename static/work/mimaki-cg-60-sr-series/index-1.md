@@ -3,10 +3,10 @@ title: Mimaki CG-60 SR series
 subtitle: Pigmented Ink on Paper, 61,5×86,7cm, 2021
 frontpage-image-group:
   images:
-    - screenshot-2020-08-08-at-12.30.20.png
-    - screenshot-2020-08-08-at-12.30.25.png
-    - screenshot-2020-08-08-at-12.30.30.png
     - screenshot-2020-08-08-at-12.30.35.png
+    - screenshot-2020-08-08-at-12.30.30.png
+    - screenshot-2020-08-08-at-12.30.25.png
+    - screenshot-2020-08-08-at-12.30.20.png
   align: between
 ---
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
