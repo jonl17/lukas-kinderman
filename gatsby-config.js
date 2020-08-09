@@ -5,6 +5,9 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: "Lukas Kinderman",
+  },
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
@@ -16,6 +19,13 @@ module.exports = {
       options: {
         repositoryName: "lukas-kinderman",
         accessToken: process.env.GATSBY_PRISMIC_ACCESS_TOKEN,
+        pages: [
+          {
+            type: "Work",
+            match: "/work/:uid",
+            component: require.resolve("./src/templates/Work"),
+          },
+        ],
       },
     },
   ],

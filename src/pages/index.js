@@ -24,6 +24,14 @@ export const query = graphql`
                 type
                 primary {
                   align
+                  work {
+                    ... on PRISMIC_Work {
+                      _meta {
+                        uid
+                      }
+                      title
+                    }
+                  }
                 }
                 fields {
                   image

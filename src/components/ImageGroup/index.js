@@ -1,6 +1,7 @@
-import React from "react"
-import "./styles.scss"
+import React, { useContext } from "react"
+import { LayoutContext } from "../../layouts"
 import cn from "classnames"
+import "./styles.scss"
 
 const ImageGroup = ({ slice }) => {
   const { primary, fields } = slice
@@ -10,9 +11,18 @@ const ImageGroup = ({ slice }) => {
     center: "justify-content-center",
     between: "justify-content-between",
   }
+
+  const { setPageTitle } = useContext(LayoutContext)
+
+  const handleImgHover = () => {
+    if (primary.work) {
+      setPageTitle(primary.work.title[0].text)
+    }
+  }
+
   return (
     <div
-      className={`d-flex flex-wrap w-100 my-5 mx-md-n3 imageGroupWrap ${
+      className={`d-flex flex-wrap w-100 my-5 mx-md-n1 imageGroupWrap ${
         alignmentClass[primary.align]
       }`}
     >
@@ -22,10 +32,13 @@ const ImageGroup = ({ slice }) => {
           return (
             <img
               key={idx}
-              className={cn(imageClass, "p-1 p-md-3 image")}
+              className={cn(imageClass, "p-1 image")}
               src={field.image.url}
               alt={field.image.alt}
-              onMouseEnter={() => console.log(primary)}
+              onMouseEnter={() =>
+                primary.work && setPageTitle(primary.work.title[0].text)
+              }
+              onMouseLeave={() => setPageTitle("Lukas Kinderman")}
             />
           )
         })}
