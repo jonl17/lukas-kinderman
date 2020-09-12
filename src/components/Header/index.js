@@ -1,10 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./styles.scss"
+import { LayoutContext } from "../../layouts"
 
-const Header = ({ title }) => {
+const Header = () => {
+  const { headerContent } = useContext(LayoutContext)
   return (
     <div className="d-flex align-items-center wrap py-4 headerWrap px-2 px-md-5">
-      <h1 className="m-0 bold">{title}</h1>
+      {headerContent}
     </div>
   )
 }
