@@ -13,7 +13,7 @@ const Work = ({ data }) => {
         subtitle={data.prismic.work.subtitle[0].text}
       />
     )
-  }, [data])
+  }, [data, setHeaderContent])
   return <p>{data.prismic.work.title[0].text}</p>
 }
 
