@@ -29,3 +29,10 @@ body {
   position: absolute;
   top: 100px;
 }
+
+a {
+  color: black;
+}
+a:hover {
+  text-decoration: none !important;
+}

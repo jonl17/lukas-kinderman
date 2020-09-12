@@ -1,7 +1,20 @@
-.headerWrap {
+.wrap {
   position: fixed;
   top: 0;
-  left: 0;
-  height: 100px;
+  height: auto;
   z-index: 100;
+}
+
+.headerWrap {
+  @extend .wrap;
+  left: 0;
+  max-width: 50%;
+}
+
+.infoWrap {
+  @extend .wrap;
+  right: 0;
+  h1 {
+    color: black;
+  }
 }

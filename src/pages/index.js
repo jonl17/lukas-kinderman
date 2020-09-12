@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import SliceZone from "../components/sliceZone"
+import Header from "../components/Header"
+import { Link } from "gatsby"
 
 export default ({ data }) => {
   const prismicContent = data.prismic.allHomepages.edges[0]
@@ -8,6 +10,7 @@ export default ({ data }) => {
   const document = prismicContent.node
   return (
     <div className="image-grid w-100 mt-md-n5">
+      <Header />
       <SliceZone sliceZone={document.body} />
     </div>
   )
@@ -30,6 +33,7 @@ export const query = graphql`
                         uid
                       }
                       title
+                      subtitle
                     }
                   }
                 }

@@ -25,6 +25,11 @@ module.exports = {
             match: "/work/:uid",
             component: require.resolve("./src/templates/Work"),
           },
+          {
+            type: "page",
+            match: "/:uid",
+            component: require.resolve("./src/templates/Page"),
+          },
         ],
       },
     },
