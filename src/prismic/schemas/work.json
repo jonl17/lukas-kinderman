@@ -13,11 +13,12 @@
         "label": "Title"
       }
     },
-    "subtitle": {
+    "description": {
       "type": "StructuredText",
       "config": {
-        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
-        "label": "Subtitle"
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, rtl",
+        "allowTargetBlank": true,
+        "label": "Description"
       }
     },
     "body": {

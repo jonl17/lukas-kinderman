@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import "./styles.scss"
 import WorkHeaderContent from "../../components/WorkHeaderContent"
 import { LayoutContext } from "../../layouts"
+import "../../prismic/fragments/workFragment"
 
 const Work = ({ data }) => {
   const { setHeaderContent } = useContext(LayoutContext)
@@ -22,14 +23,7 @@ export default Work
 export const query = graphql`
   query($id: String!) {
     prismicWork(id: { eq: $id }) {
-      data {
-        title {
-          text
-        }
-        subtitle {
-          html
-        }
-      }
+      ...prismicWorkFragment
     }
   }
 `

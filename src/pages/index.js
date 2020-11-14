@@ -3,11 +3,12 @@ import { graphql } from "gatsby"
 import SliceZone from "../components/sliceZone"
 import Header from "../components/Header"
 import { Link } from "gatsby"
-import "../prismic/fragments/imageGroup"
+import "../prismic/fragments/imageGroupFragment"
 import ImageGroup from "../components/ImageGroup"
 
 export default ({ data }) => {
   const prismicContent = data.prismicHomepage.data.body
+  if (!prismicContent) return null
   return (
     <div className="image-grid w-100 mt-md-n5">
       <Header />

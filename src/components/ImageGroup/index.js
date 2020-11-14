@@ -14,17 +14,21 @@ const ImageGroup = ({ slice }) => {
   }
 
   const { setHeaderContent, DEFAULT_HEADER_CONTENT } = useContext(LayoutContext)
-  console.log(primary)
+  console.log(items)
   const Images = () => {
     return items.map((item, idx) => {
       const imageClass = items.length > 1 ? "imageScale" : "w-75"
       return (
         <Link
           key={idx}
-          to={primary.work ? `/work/${primary.work.document.uid}` : null}
-          title={primary.work ? primary.work.document.data.title.text : null}
+          to={
+            primary.work.document ? `/work/${primary.work.document.uid}` : null
+          }
+          title={
+            primary.work.document ? primary.work.document.data.title.text : null
+          }
           subtitle={
-            primary.work ? primary.work.document.data.subtitle.text : null
+            primary.work ? primary.work.document.data.description.html : null
           }
           style={{ display: "contents" }}
         >

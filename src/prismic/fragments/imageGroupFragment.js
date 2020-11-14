@@ -1,4 +1,5 @@
 import { graphql } from "gatsby"
+import "./workFragment"
 
 export const fragment = graphql`
   fragment imageGroupFragment on PrismicHomepageBodyImageGroup {
@@ -7,17 +8,7 @@ export const fragment = graphql`
       work {
         document {
           __typename
-          ... on PrismicWork {
-            uid
-            data {
-              title {
-                text
-              }
-              subtitle {
-                text
-              }
-            }
-          }
+          ...prismicWorkFragment
         }
       }
     }
@@ -25,6 +16,9 @@ export const fragment = graphql`
       image {
         url
         alt
+      }
+      description {
+        html
       }
     }
   }
