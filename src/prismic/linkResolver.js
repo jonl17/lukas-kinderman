@@ -1,5 +1,5 @@
 export const linkResolver = doc => {
-  // URL for a category type
+  // URL for a work type
   if (doc.type === "Work") {
     return `/work/${doc.uid}`
   }

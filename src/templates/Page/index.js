@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
-import { htmlSerializer } from "../../prismic-config/htmlSerializer"
 import { Link } from "gatsby"
 import styles from "./styles.scss"
 
@@ -22,9 +21,8 @@ const Page = ({ data }) => {
   return (
     <div className="container">
       <ExitButton />
-      <RichText
-        render={data.prismic.page.content}
-        htmlSerializer={htmlSerializer}
+      <div
+        dangerouslySetInnerHTML={{ __html: data.prismicPage.data.content.html }}
       />
     </div>
   )
@@ -33,11 +31,16 @@ const Page = ({ data }) => {
 export default Page
 
 export const query = graphql`
-  query($uid: String!) {
-    prismic {
-      page(lang: "en-us", uid: $uid) {
-        title
-        content
+  query($id: String!) {
+    prismicPage(id: { eq: $id }) {
+      uid
+      data {
+        title {
+          html
+        }
+        content {
+          html
+        }
       }
     }
   }

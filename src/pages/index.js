@@ -3,46 +3,28 @@ import { graphql } from "gatsby"
 import SliceZone from "../components/sliceZone"
 import Header from "../components/Header"
 import { Link } from "gatsby"
+import "../prismic/fragments/imageGroup"
+import ImageGroup from "../components/ImageGroup"
 
 export default ({ data }) => {
-  const prismicContent = data.prismic.allHomepages.edges[0]
-  if (!prismicContent) return null
-  const document = prismicContent.node
+  const prismicContent = data.prismicHomepage.data.body
   return (
     <div className="image-grid w-100 mt-md-n5">
       <Header />
-      <SliceZone sliceZone={document.body} />
+      {prismicContent.map((content, idx) => (
+        <ImageGroup key={idx} slice={content} />
+      ))}
     </div>
   )
 }
 
 export const query = graphql`
   {
-    prismic {
-      allHomepages {
-        edges {
-          node {
-            body {
-              ... on PRISMIC_HomepageBodyImage_group {
-                type
-                primary {
-                  align
-                  work {
-                    ... on PRISMIC_Work {
-                      _meta {
-                        uid
-                      }
-                      title
-                      subtitle
-                    }
-                  }
-                }
-                fields {
-                  image
-                }
-              }
-            }
-          }
+    prismicHomepage {
+      data {
+        body {
+          __typename
+          ...imageGroupFragment
         }
       }
     }

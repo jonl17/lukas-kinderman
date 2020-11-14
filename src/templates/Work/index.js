@@ -9,22 +9,26 @@ const Work = ({ data }) => {
   useEffect(() => {
     setHeaderContent(
       <WorkHeaderContent
-        title={data.prismic.work.title[0].text}
-        subtitle={data.prismic.work.subtitle[0].text}
+        title={data.prismicWork.data.title.text}
+        subtitle={data.prismicWork.data.subtitle.text}
       />
     )
   }, [data, setHeaderContent])
-  return <p>{data.prismic.work.title[0].text}</p>
+  return <p>{data.prismicWork.data.title.text}</p>
 }
 
 export default Work
 
 export const query = graphql`
-  query($uid: String!) {
-    prismic {
-      work(lang: "en-us", uid: $uid) {
-        title
-        subtitle
+  query($id: String!) {
+    prismicWork(id: { eq: $id }) {
+      data {
+        title {
+          text
+        }
+        subtitle {
+          html
+        }
       }
     }
   }

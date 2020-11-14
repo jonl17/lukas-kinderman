@@ -1,0 +1,64 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Title",
+        "placeholder": "Homepage"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "image_group": []
+        },
+        "choices": {
+          "image_group": {
+            "type": "Slice",
+            "fieldset": "Image Group",
+            "description": "Group images for the frontpage and pick align.",
+            "icon": "border_top",
+            "display": "list",
+            "non-repeat": {
+              "work": {
+                "type": "Link",
+                "config": {
+                  "select": "document",
+                  "customtypes": ["work"],
+                  "label": "Work"
+                }
+              },
+              "align": {
+                "type": "Select",
+                "config": {
+                  "options": ["left", "right", "center", "between"],
+                  "default_value": "left",
+                  "label": "Align"
+                }
+              }
+            },
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

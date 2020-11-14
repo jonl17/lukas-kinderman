@@ -5,7 +5,7 @@ import Link from "../Link"
 import "./styles.scss"
 
 const ImageGroup = ({ slice }) => {
-  const { primary, fields } = slice
+  const { primary, items } = slice
   const alignmentClass = {
     left: "justify-content-start",
     right: "justify-content-end",
@@ -14,22 +14,25 @@ const ImageGroup = ({ slice }) => {
   }
 
   const { setHeaderContent, DEFAULT_HEADER_CONTENT } = useContext(LayoutContext)
-
+  console.log(primary)
   const Images = () => {
-    return fields.map((field, idx) => {
-      const imageClass = fields.length > 1 ? "imageScale" : "w-75"
+    return items.map((item, idx) => {
+      const imageClass = items.length > 1 ? "imageScale" : "w-75"
       return (
         <Link
-          to={primary.work ? `/work/${primary.work._meta.uid}` : null}
-          title={primary.work ? primary.work.title[0].text : null}
-          subtitle={primary.work ? primary.work.subtitle[0].text : null}
+          key={idx}
+          to={primary.work ? `/work/${primary.work.document.uid}` : null}
+          title={primary.work ? primary.work.document.data.title.text : null}
+          subtitle={
+            primary.work ? primary.work.document.data.subtitle.text : null
+          }
           style={{ display: "contents" }}
         >
           <img
             key={idx}
             className={cn(imageClass, "p-1 image")}
-            src={field.image.url}
-            alt={field.image.alt}
+            src={item.image.url}
+            alt={item.image.alt}
           />
         </Link>
       )
@@ -39,7 +42,7 @@ const ImageGroup = ({ slice }) => {
   const containerClass = `d-flex flex-row flex-wrap w-100 my-5 mx-md-n1 imageGroupWrap ${
     alignmentClass[primary.align]
   }`
-  return <div className={containerClass}>{fields && <Images />}</div>
+  return <div className={containerClass}>{items && <Images />}</div>
 }
 
 export default ImageGroup

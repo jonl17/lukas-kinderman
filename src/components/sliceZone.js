@@ -2,6 +2,7 @@ import React from "react"
 import ImageGroup from "../components/ImageGroup"
 
 const SliceZone = ({ sliceZone }) => {
+  console.log(sliceZone)
   const sliceComponents = {
     image_group: ImageGroup,
   }

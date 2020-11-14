@@ -4,6 +4,12 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+require("dotenv").config({
+  path: `.env.development`,
+})
+
+const { htmlSerializer } = require("./src/prismic/htmlSerializer")
+
 module.exports = {
   siteMetadata: {
     title: "Lukas Kinderman",
@@ -15,22 +21,41 @@ module.exports = {
     `gatsby-plugin-layout`,
     `gatsby-plugin-sass`,
     {
-      resolve: "@prismicio/gatsby-source-prismic-graphql",
+      resolve: `gatsby-source-prismic`,
       options: {
-        repositoryName: "lukas-kinderman",
+        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
         accessToken: process.env.GATSBY_PRISMIC_ACCESS_TOKEN,
-        pages: [
-          {
-            type: "Work",
-            match: "/work/:uid",
-            component: require.resolve("./src/templates/Work"),
-          },
-          {
-            type: "page",
-            match: "/:uid",
-            component: require.resolve("./src/templates/Page"),
-          },
+        linkResolver: ({ node, key, value }) => doc => {
+          // URL for a work type
+          if (doc.type === "Work") {
+            return `/work/${doc.uid}`
+          }
+          // URL for a page type
+          if (doc.type === "page") {
+            return `/${doc.uid}`
+          }
+          // Backup for all other types
+          return "/"
+        },
+        fetchLinks: [
+          // Your list of links
         ],
+        htmlSerializer: ({ node, key, value }) => (
+          type,
+          element,
+          content,
+          children
+        ) => htmlSerializer(element, content),
+        schemas: {
+          homepage: require(`./src/prismic/schemas/homepage.json`),
+          page: require(`./src/prismic/schemas/page.json`),
+          work: require(`./src/prismic/schemas/work.json`),
+        },
+        lang: "*",
+        prismicToolbar: true,
+        shouldDownloadImage: ({ node, key, value }) => {
+          // Return true to download the image or false to skip.
+        },
       },
     },
   ],
