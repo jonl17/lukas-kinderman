@@ -1,28 +1,24 @@
 @font-face {
   font-family: Reader Regular;
   src: url("../../static/font/reader/Reader-Regular.otf");
+  font-weight: 400;
 }
 
 @font-face {
   font-family: Reader Medium;
   src: url("../../static//font/reader/Reader-Medium.otf");
+  font-weight: 600;
 }
 
 @font-face {
   font-family: Reader Medium Italic;
   src: url("../../static//font/reader/Reader-Medium\ Italic.otf");
+  font-weight: 400;
+  font-style: italic;
 }
 
 body {
-  font-family: Reader Regular !important;
-}
-
-.bold {
-  font-family: Reader Medium;
-}
-
-.italic {
-  font-family: Reader Medium Italic;
+  font-family: Reader Regular;
 }
 
 .mainContentWrap {

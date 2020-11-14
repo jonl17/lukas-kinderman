@@ -6,15 +6,6 @@ import { LayoutContext } from "../../layouts"
 import "../../prismic/fragments/workFragment"
 
 const Work = ({ data }) => {
-  const { setHeaderContent } = useContext(LayoutContext)
-  useEffect(() => {
-    setHeaderContent(
-      <WorkHeaderContent
-        title={data.prismicWork.data.title.text}
-        subtitle={data.prismicWork.data.subtitle.text}
-      />
-    )
-  }, [data, setHeaderContent])
   return <p>{data.prismicWork.data.title.text}</p>
 }
 
