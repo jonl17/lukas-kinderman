@@ -7,7 +7,6 @@ export const fragment = graphql`
       align
       work {
         document {
-          __typename
           ...prismicWorkFragment
         }
       }

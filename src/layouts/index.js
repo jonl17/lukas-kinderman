@@ -5,15 +5,17 @@ import "./styles.scss"
 export const LayoutContext = createContext()
 
 const Layout = ({ children }) => {
-  const DEFAULT_HEADER_CONTENT = () => (
-    <h1 className="m-0 bold">Lukas Kinderman</h1>
+  const [headerContent, setHeaderContent] = useState(
+    <h1 className="m-0 bold">Lukas Kindermann</h1>
   )
-  const [headerContent, setHeaderContent] = useState(DEFAULT_HEADER_CONTENT)
+
+  const updateTheHeader = html => {
+    console.log(html)
+    setHeaderContent(<div dangerouslySetInnerHTML={{ __html: html }} />)
+  }
 
   return (
-    <LayoutContext.Provider
-      value={{ headerContent, setHeaderContent, DEFAULT_HEADER_CONTENT }}
-    >
+    <LayoutContext.Provider value={{ headerContent, updateTheHeader }}>
       <div className="px-2 px-md-5 mainContentWrap">
         <div>{children}</div>
       </div>

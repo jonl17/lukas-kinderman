@@ -21,10 +21,6 @@ var htmlSerializer = function(element, content) {
     )
   }
 
-  if (element.type == "paragraph") {
-    return "<p class='paragraph-class'>" + element.text + "</p>"
-  }
-
   if (element.type == "heading1") {
     return '<h1 class="hdln--1">' + element.text + "</h1>"
   }

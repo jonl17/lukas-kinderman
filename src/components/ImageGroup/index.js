@@ -1,11 +1,10 @@
 import React, { useContext } from "react"
 import { LayoutContext } from "../../layouts"
 import cn from "classnames"
-import Link from "../Link"
+import { Link } from "gatsby"
 import "./styles.scss"
 
-const ImageGroup = ({ slice }) => {
-  const { primary, items } = slice
+const ImageGroup = ({ group }) => {
   const alignmentClass = {
     left: "justify-content-start",
     right: "justify-content-end",
@@ -13,23 +12,15 @@ const ImageGroup = ({ slice }) => {
     between: "justify-content-between",
   }
 
-  const { setHeaderContent, DEFAULT_HEADER_CONTENT } = useContext(LayoutContext)
-  console.log(items)
+  const { updateTheHeader } = useContext(LayoutContext)
+
   const Images = () => {
-    return items.map((item, idx) => {
-      const imageClass = items.length > 1 ? "imageScale" : "w-75"
+    return group.images.map((item, idx) => {
+      const imageClass = group.images.length > 1 ? "imageScale" : "w-75"
       return (
         <Link
           key={idx}
-          to={
-            primary.work.document ? `/work/${primary.work.document.uid}` : null
-          }
-          title={
-            primary.work.document ? primary.work.document.data.title.text : null
-          }
-          subtitle={
-            primary.work ? primary.work.document.data.description.html : null
-          }
+          to={`/work/${group.work.uid}`}
           style={{ display: "contents" }}
         >
           <img
@@ -37,6 +28,8 @@ const ImageGroup = ({ slice }) => {
             className={cn(imageClass, "p-1 image")}
             src={item.image.url}
             alt={item.image.alt}
+            onMouseEnter={() => updateTheHeader(item.description.html)}
+            onMouseLeave={() => updateTheHeader("<h1>Lukas Kindermann</h1>")}
           />
         </Link>
       )
@@ -44,9 +37,14 @@ const ImageGroup = ({ slice }) => {
   }
 
   const containerClass = `d-flex flex-row flex-wrap w-100 my-5 mx-md-n1 imageGroupWrap ${
-    alignmentClass[primary.align]
+    alignmentClass[group.align]
   }`
-  return <div className={containerClass}>{items && <Images />}</div>
+
+  return (
+    <div className={containerClass}>
+      <Images />
+    </div>
+  )
 }
 
 export default ImageGroup
