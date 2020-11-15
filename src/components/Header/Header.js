@@ -13,7 +13,7 @@ const Header = () => {
         className="header__information-link d-flex align-items-center py-4 px-2 px-md-5"
         to="/info"
       >
-        <h1 className="bold m-0">Info</h1>
+        <h1 className="m-0">Info</h1>
       </Link>
     </div>
   )
