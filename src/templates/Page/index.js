@@ -4,6 +4,7 @@ import { RichText } from "prismic-reactjs"
 import { Link } from "gatsby"
 import SliceZone from "../../components/sliceZone"
 import ExitButton from "../../components/ExitButton"
+import { withPreview } from "gatsby-source-prismic"
 
 const Page = ({ data }) => {
   if (!data) {
@@ -26,7 +27,7 @@ const Page = ({ data }) => {
   )
 }
 
-export default Page
+export default withPreview(Page)
 
 export const query = graphql`
   query($id: String!) {

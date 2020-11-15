@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react"
 import { graphql } from "gatsby"
-import "./styles.scss"
 import WorkHeaderContent from "../../components/WorkHeaderContent"
 import SliceZone from "../../components/sliceZone"
 import "../../prismic/fragments/workFragment"
 import ExitButton from "../../components/ExitButton"
+import { withPreview } from "gatsby-source-prismic"
 
 const Work = ({ data }) => {
   if (!data) return null
@@ -21,7 +21,7 @@ const Work = ({ data }) => {
   )
 }
 
-export default Work
+export default withPreview(Work)
 
 export const query = graphql`
   query($id: String!) {
