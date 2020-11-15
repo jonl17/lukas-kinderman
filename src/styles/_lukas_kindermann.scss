@@ -2,13 +2,14 @@
 @import "./components/page";
 @import "./components/header";
 @import "./components/homepage";
+@import "./components/work";
 
 $margin: 2rem;
 
 p {
   font-family: Reader;
-  font-size: 33px;
-  line-height: 37.29px;
+  font-size: 40px;
+  line-height: 40px;
   font-weight: 500;
   margin-bottom: $margin;
 }

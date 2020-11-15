@@ -5,7 +5,10 @@ fragment prismicWorkFragment on PrismicWork {
   uid
   data {
     title {
-      text
+      html
+    }
+    subtitle {
+      html
     }
     description {
       html

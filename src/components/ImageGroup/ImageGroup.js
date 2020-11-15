@@ -29,7 +29,7 @@ const ImageGroup = ({ group }) => {
             src={item.image.url}
             alt={item.image.alt}
             onMouseEnter={() => updateTheHeader(item.description.html)}
-            onMouseLeave={() => updateTheHeader("<h1>Lukas Kindermann</h1>")}
+            onMouseLeave={() => updateTheHeader("<p>Lukas Kindermann</p>")}
           />
         </Link>
       )

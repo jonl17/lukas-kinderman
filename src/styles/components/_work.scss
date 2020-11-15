@@ -1,0 +1,12 @@
+.work {
+  &__description {
+    p {
+      font-size: 25px;
+      line-height: 27px;
+    }
+
+    p:not(:last-of-type) {
+      margin-bottom: 0;
+    }
+  }
+}

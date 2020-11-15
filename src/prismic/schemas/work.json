@@ -13,6 +13,15 @@
         "label": "Title"
       }
     },
+    "subtitle": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, rtl",
+        "allowTargetBlank": true,
+        "label": "Subtitle",
+        "placeholder": "Appears on top of detail page."
+      }
+    },
     "description": {
       "type": "StructuredText",
       "config": {

@@ -4,9 +4,7 @@ import Header from "../components/Header"
 export const LayoutContext = createContext()
 
 const Layout = ({ children }) => {
-  const [headerContent, setHeaderContent] = useState(
-    <h1 className="m-0 bold">Lukas Kindermann</h1>
-  )
+  const [headerContent, setHeaderContent] = useState("<p>Lukas Kindermann</p>")
 
   const updateTheHeader = html => {
     setHeaderContent(<div dangerouslySetInnerHTML={{ __html: html }} />)

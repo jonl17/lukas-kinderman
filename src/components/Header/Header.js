@@ -11,7 +11,7 @@ const Header = () => {
         className="header__information-link d-flex align-items-center mt-4 mr-3"
         to="/info"
       >
-        <h1 className="m-0">Info</h1>
+        <p className="m-0">Info</p>
       </Link>
     </div>
   )
