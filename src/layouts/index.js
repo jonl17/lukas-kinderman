@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
 
   return (
     <LayoutContext.Provider value={{ headerContent, updateTheHeader }}>
-      <div className="px-2 px-md-5 mainContentWrap">
+      <div>
         <div>{children}</div>
       </div>
     </LayoutContext.Provider>

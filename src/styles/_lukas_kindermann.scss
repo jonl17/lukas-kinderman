@@ -1,12 +1,16 @@
 @import "./config/font";
 @import "./components/page";
 @import "./components/header";
+@import "./components/homepage";
+
+$margin: 2rem;
 
 p {
   font-family: Reader;
   font-size: 33px;
   line-height: 37.29px;
   font-weight: 500;
+  margin-bottom: $margin;
 }
 
 a {
@@ -30,13 +34,22 @@ h6 {
   color: lightgray;
 }
 
-.mainContentWrap {
-  position: absolute;
-  top: 100px;
-}
-
 strong {
   font-weight: 500;
+}
+
+.image-class {
+  max-width: 400px;
+  margin-bottom: $margin;
+}
+
+.link-class {
+  color: inherit;
+  text-decoration: underline;
+
+  &:hover {
+    color: gray;
+  }
 }
 
 @import "../../node_modules/bootstrap/dist/css/bootstrap.css";

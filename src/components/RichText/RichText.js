@@ -2,7 +2,7 @@ import React from "react"
 
 const RichText = ({ html }) => {
   return (
-    <div className="col-lg-11" dangerouslySetInnerHTML={{ __html: html }} />
+    <div className="col-lg-11 p-0" dangerouslySetInnerHTML={{ __html: html }} />
   )
 }
 

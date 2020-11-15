@@ -5,12 +5,10 @@ import { Link } from "gatsby"
 const Header = () => {
   const { headerContent } = useContext(LayoutContext)
   return (
-    <div className="header d-flex justify-content-between w-100">
-      <div className="header__dynamic-content py-4 px-2 px-md-5">
-        {headerContent}
-      </div>
+    <div className="header d-flex justify-content-between w-100 mt-4 ml-3">
+      <div className="header__dynamic-content">{headerContent}</div>
       <Link
-        className="header__information-link d-flex align-items-center py-4 px-2 px-md-5"
+        className="header__information-link d-flex align-items-center mt-4 mr-3"
         to="/info"
       >
         <h1 className="m-0">Info</h1>

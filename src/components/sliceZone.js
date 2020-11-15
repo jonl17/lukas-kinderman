@@ -5,11 +5,11 @@ import RichText from "../components/RichText"
 
 const SliceZone = ({ body }) => {
   const sliceComponents = {
-    PrismicPageBodyTextImages: TextImages,
+    PrismicWorkBodyTextImages: TextImages,
     PrismicPageBodyRichText: RichText,
   }
   const sliceProps = slice => {
-    if (slice.__typename === "PrismicPageBodyTextImages") {
+    if (slice.__typename === "PrismicWorkBodyTextImages") {
       return {
         images: slice.items,
       }

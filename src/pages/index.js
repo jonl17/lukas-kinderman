@@ -33,9 +33,11 @@ export default ({ data }) => {
   return (
     <div className="image-grid w-100 mt-md-n5">
       <Header />
-      {imageGroups.map((group, idx) => (
-        <ImageGroup key={idx} group={group} />
-      ))}
+      <div className="image-group__container">
+        {imageGroups.map((group, idx) => (
+          <ImageGroup key={idx} group={group} />
+        ))}
+      </div>
     </div>
   )
 }

@@ -13,8 +13,8 @@ var htmlSerializer = function(element, content) {
   // Add a class to hyperlinks
   if (element.type == "hyperlink") {
     return (
-      '<a target="_blank" class="link-class" href="' +
-      element.data.url +
+      '<a class="link-class" href="' +
+      element.data.slug +
       '">' +
       content +
       "</a>"
