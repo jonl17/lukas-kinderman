@@ -1,15 +1,30 @@
 import React from "react"
 import ImageGroup from "../components/ImageGroup"
+import TextImages from "../components/TextImages"
+import RichText from "../components/RichText"
 
-const SliceZone = ({ sliceZone }) => {
-  console.log(sliceZone)
+const SliceZone = ({ body }) => {
   const sliceComponents = {
-    image_group: ImageGroup,
+    PrismicPageBodyTextImages: TextImages,
+    PrismicPageBodyRichText: RichText,
   }
-  const sliceZoneContent = sliceZone.map((slice, index) => {
-    const SliceComponent = sliceComponents[slice.type]
+  const sliceProps = slice => {
+    if (slice.__typename === "PrismicPageBodyTextImages") {
+      return {
+        images: slice.items,
+      }
+    }
+    if (slice.__typename === "PrismicPageBodyRichText") {
+      return {
+        html: slice.primary.text.html,
+      }
+    }
+  }
+  const sliceZoneContent = body.map((slice, idx) => {
+    const SliceComponent = sliceComponents[slice.__typename]
+    const props = sliceProps(slice)
     if (SliceComponent) {
-      return <SliceComponent slice={slice} key={`slice-${index}`} />
+      return <SliceComponent {...props} key={`slice-${idx}`} />
     }
     return null
   })

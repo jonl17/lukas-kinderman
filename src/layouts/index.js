@@ -1,6 +1,5 @@
 import React, { createContext, useState } from "react"
 import Header from "../components/Header"
-import "./styles.scss"
 
 export const LayoutContext = createContext()
 
@@ -10,7 +9,6 @@ const Layout = ({ children }) => {
   )
 
   const updateTheHeader = html => {
-    console.log(html)
     setHeaderContent(<div dangerouslySetInnerHTML={{ __html: html }} />)
   }
 

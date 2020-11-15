@@ -14,12 +14,54 @@
         "label": "Title"
       }
     },
-    "content": {
-      "type": "StructuredText",
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
       "config": {
-        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
-        "allowTargetBlank": true,
-        "label": "Content"
+        "labels": {
+          "text_images": [],
+          "rich_text": []
+        },
+        "choices": {
+          "text_images": {
+            "type": "Slice",
+            "fieldset": "Text images",
+            "description": "Looks best with 2 images.",
+            "icon": "inbox",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 700
+                  },
+                  "thumbnails": [],
+                  "label": "image"
+                }
+              }
+            }
+          },
+          "rich_text": {
+            "type": "Slice",
+            "fieldset": "Rich text",
+            "description": "Add multiple paragraphs, links, etc.",
+            "icon": "format_color_text",
+            "display": "list",
+            "non-repeat": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, rtl",
+                  "allowTargetBlank": true,
+                  "label": "Text"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
       }
     }
   }

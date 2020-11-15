@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
 import { Link } from "gatsby"
-import styles from "./styles.scss"
+import SliceZone from "../../components/sliceZone"
 
 const ExitButton = () => (
   <Link
@@ -19,11 +19,9 @@ const Page = ({ data }) => {
     return null
   }
   return (
-    <div className="container">
+    <div>
       <ExitButton />
-      <div
-        dangerouslySetInnerHTML={{ __html: data.prismicPage.data.content.html }}
-      />
+      <SliceZone body={data.prismicPage.data.body} />
     </div>
   )
 }
@@ -38,8 +36,23 @@ export const query = graphql`
         title {
           html
         }
-        content {
-          html
+        body {
+          __typename
+          ... on PrismicPageBodyRichText {
+            primary {
+              text {
+                html
+              }
+            }
+          }
+          ... on PrismicPageBodyTextImages {
+            items {
+              image {
+                url
+                alt
+              }
+            }
+          }
         }
       }
     }
