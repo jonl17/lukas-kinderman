@@ -16,7 +16,7 @@ const ImageGroup = ({ group }) => {
 
   const Images = () => {
     return group.images.map((item, idx) => {
-      const imageClass = group.images.length > 1 ? "imageScale" : "w-75"
+      const imageClass = group.images.length > 1 ? "w-25" : "w-75"
       return (
         <Link
           key={idx}
@@ -41,7 +41,7 @@ const ImageGroup = ({ group }) => {
   }`
 
   return (
-    <div className={containerClass}>
+    <div className={cn(containerClass)}>
       <Images />
     </div>
   )

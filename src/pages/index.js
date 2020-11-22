@@ -15,7 +15,7 @@ export default ({ data }) => {
     return {
       align: group.primary.align,
       work: {
-        uid: group.primary.work.document.uid,
+        uid: group.primary.work.document ? group.primary.work.document.uid : "",
       },
       images: group.items.map(item => {
         return {
@@ -31,7 +31,7 @@ export default ({ data }) => {
   }, [])
 
   return (
-    <div className="image-grid w-100 mt-md-n5">
+    <div className="image-grid w-100 mt-md-n5 px-3">
       <Header />
       <div className="image-group__container">
         {imageGroups.map((group, idx) => (
