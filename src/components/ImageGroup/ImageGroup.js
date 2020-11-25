@@ -18,20 +18,14 @@ const ImageGroup = ({ group }) => {
     return group.images.map((item, idx) => {
       const imageClass = group.images.length > 1 ? "w-25" : "w-75"
       return (
-        <Link
+        <img
           key={idx}
-          to={`/work/${group.work.uid}`}
-          style={{ display: "contents" }}
-        >
-          <img
-            key={idx}
-            className={cn(imageClass, "p-1 image")}
-            src={item.image.url}
-            alt={item.image.alt}
-            onMouseEnter={() => updateTheHeader(item.description.html)}
-            onMouseLeave={() => updateTheHeader("<p>Lukas Kindermann</p>")}
-          />
-        </Link>
+          className={cn(imageClass, "p-1 image")}
+          src={item.image.url}
+          alt={item.image.alt}
+          onMouseEnter={() => updateTheHeader(item.description.html)}
+          onMouseLeave={() => updateTheHeader("<p>Lukas Kindermann</p>")}
+        />
       )
     })
   }
