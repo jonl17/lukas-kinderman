@@ -12,9 +12,7 @@ const Layout = ({ children }) => {
 
   return (
     <LayoutContext.Provider value={{ headerContent, updateTheHeader }}>
-      <div>
-        <div>{children}</div>
-      </div>
+      <div>{children}</div>
     </LayoutContext.Provider>
   )
 }

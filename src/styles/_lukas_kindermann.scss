@@ -1,8 +1,12 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
 @import "./config/font";
 @import "./components/page";
 @import "./components/header";
 @import "./components/homepage";
 @import "./components/work";
+@import "./components/image-group";
 
 $margin: 2rem;
 
@@ -12,6 +16,10 @@ p {
   line-height: 40px;
   font-weight: 500;
   margin-bottom: $margin;
+
+  @include media-breakpoint-down("md") {
+    font-size: 25px;
+  }
 }
 
 a {
@@ -40,8 +48,13 @@ strong {
 }
 
 .image-class {
-  max-width: 400px;
+  max-height: 100vh;
+  height: 100%;
   margin-bottom: $margin;
+
+  @include media-breakpoint-down("md") {
+    width: 100%;
+  }
 }
 
 .link-class {

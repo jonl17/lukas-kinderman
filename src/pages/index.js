@@ -27,7 +27,7 @@ export default ({ data }) => {
 
   const { updateTheHeader } = useContext(LayoutContext)
   useEffect(() => {
-    updateTheHeader("<p>Lukas Kindermann</p>")
+    updateTheHeader("<h1>Lukas Kindermann</h1>")
   }, [])
 
   return (

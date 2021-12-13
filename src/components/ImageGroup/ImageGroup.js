@@ -2,7 +2,6 @@ import React, { useContext } from "react"
 import { LayoutContext } from "../../layouts"
 import cn from "classnames"
 import { Link } from "gatsby"
-import "./styles.scss"
 import Img from "gatsby-image"
 
 const ImageGroup = ({ group }) => {
@@ -17,13 +16,16 @@ const ImageGroup = ({ group }) => {
 
   const Images = () => {
     return group.images.map((item, idx) => {
-      const imageClass = group.images.length > 1 ? "w-25" : "w-75"
+      const imageClass =
+        group.images.length > 1 ? "image--quarter" : "image--three-quarter"
       return (
         <div
           key={idx}
           className={cn(imageClass, "p-1 image")}
-          onMouseEnter={() => updateTheHeader(item.description.html)}
-          onMouseLeave={() => updateTheHeader("<p>Lukas Kindermann</p>")}
+          onMouseEnter={() => {
+            updateTheHeader(item.description.html)
+          }}
+          onMouseLeave={() => updateTheHeader("<h1>Lukas Kindermann</h1>")}
         >
           <Img
             className="h-100"

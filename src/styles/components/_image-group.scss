@@ -1,12 +1,19 @@
-@import "node_modules/bootstrap/scss/functions";
-@import "node_modules/bootstrap/scss/variables";
-@import "node_modules/bootstrap/scss/mixins";
-
 .image {
   object-fit: contain;
   max-height: 100vh;
   @include media-breakpoint-up(mx) {
     object-fit: cover;
+  }
+
+  width: 100%;
+
+  @include media-breakpoint-up("lg") {
+    &--quarter {
+      width: 25%;
+    }
+    &--three-quarter {
+      width: 75%;
+    }
   }
 }
 
