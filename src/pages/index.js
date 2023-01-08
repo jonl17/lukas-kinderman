@@ -39,7 +39,7 @@ export default ({ data }) => {
           <ImageGroup key={idx} group={group} />
         ))}
       </div>
-      <span className="mobile-project-footer">
+      <span className="mobile-project-footer d-block d-lg-none">
         <h1>{headerContent}</h1>
       </span>
     </div>
