@@ -7,6 +7,7 @@
 @import "./components/homepage";
 @import "./components/work";
 @import "./components/image-group";
+@import "./components/rich-text";
 
 $margin: 2rem;
 
@@ -18,7 +19,7 @@ p {
   margin-bottom: $margin;
 
   @include media-breakpoint-down("md") {
-    font-size: 25px;
+    font-size: 16px;
   }
 }
 
@@ -64,6 +65,34 @@ strong {
   &:hover {
     color: gray;
   }
+}
+
+.mobile-project-footer {
+  position: fixed;
+  bottom: 0;
+  font-size: 29px;
+  @include media-breakpoint-down("md") {
+    padding: 5px;
+  }
+  * {
+    margin: 0;
+    @include media-breakpoint-down("md") {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+}
+
+.image-group-detector {
+  position: absolute;
+  top: 200px;
+  height: 100px;
+  width: 100%;
+  background: green;
+}
+
+.slice-wrap {
+  margin-top: 100px;
 }
 
 @import "../../node_modules/bootstrap/dist/css/bootstrap.css";

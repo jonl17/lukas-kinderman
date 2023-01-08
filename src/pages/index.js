@@ -11,10 +11,11 @@ export default ({ data }) => {
   const prismicContent = data.prismicHomepage.data.body
   if (!prismicContent) return null
 
-  const imageGroups = prismicContent.map(group => {
+  const imageGroups = prismicContent.map((group, idx) => {
     return {
       align: group.primary.align,
       work: {
+        id: idx,
         uid: group.primary.work.document ? group.primary.work.document.uid : "",
       },
       images: group.items.map(item => {
@@ -25,7 +26,7 @@ export default ({ data }) => {
     }
   })
 
-  const { updateTheHeader } = useContext(LayoutContext)
+  const { updateTheHeader, headerContent } = useContext(LayoutContext)
   useEffect(() => {
     updateTheHeader("<h1>Lukas Kindermann</h1>")
   }, [])
@@ -38,6 +39,9 @@ export default ({ data }) => {
           <ImageGroup key={idx} group={group} />
         ))}
       </div>
+      <span className="mobile-project-footer">
+        <h1>{headerContent}</h1>
+      </span>
     </div>
   )
 }

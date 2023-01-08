@@ -1,7 +1,6 @@
 import React from "react"
 
 const TextImages = ({ images = [] }) => {
-  console.log(images)
   return (
     <div>
       {images.map(({ image }, idx) => (

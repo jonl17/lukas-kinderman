@@ -22,7 +22,9 @@ const Page = ({ data }) => {
           }}
         />
       )}
-      <SliceZone body={body} />
+      <div className="slice-wrap">
+        <SliceZone body={body} />
+      </div>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { LayoutContext } from "../../layouts"
 import cn from "classnames"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
+import { useInView } from "../../hooks/useInView"
 
 const ImageGroup = ({ group }) => {
   const alignmentClass = {
@@ -31,6 +32,8 @@ const ImageGroup = ({ group }) => {
             className="h-100"
             fluid={item.image.fluid}
             alt={item.image.alt}
+            style={{ objectFit: "contain" }}
+            imgStyle={{ objectFit: "contain" }}
           />
         </div>
       )
@@ -42,7 +45,7 @@ const ImageGroup = ({ group }) => {
   }`
 
   return (
-    <div className={cn(containerClass)}>
+    <div className={cn(containerClass, "position-relative")}>
       <Images />
     </div>
   )

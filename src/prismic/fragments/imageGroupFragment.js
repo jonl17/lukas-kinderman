@@ -6,6 +6,7 @@ export const fragment = graphql`
     primary {
       align
       work {
+        id
         document {
           ...prismicWorkFragment
         }

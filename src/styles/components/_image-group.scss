@@ -1,6 +1,6 @@
 .image {
   object-fit: contain;
-  max-height: 100vh;
+  height: 100vh;
   @include media-breakpoint-up(mx) {
     object-fit: cover;
   }
