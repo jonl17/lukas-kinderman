@@ -1,6 +1,11 @@
 .image {
   object-fit: contain;
   height: 100vh;
+
+  @include media-breakpoint-down(md) {
+    height: 50vh;
+  }
+
   @include media-breakpoint-up(mx) {
     object-fit: cover;
   }
