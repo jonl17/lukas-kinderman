@@ -50,6 +50,7 @@ module.exports = {
           homepage: require(`./src/prismic/schemas/homepage.json`),
           page: require(`./src/prismic/schemas/page.json`),
           work: require(`./src/prismic/schemas/work.json`),
+          footer: require("./src/prismic/schemas/footer.json"),
         },
         lang: "*",
         prismicToolbar: true,
