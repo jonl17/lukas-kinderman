@@ -41,7 +41,8 @@
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
     "sass": "^1.57.1",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.0",
+    "zustand": "^4.3.2"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

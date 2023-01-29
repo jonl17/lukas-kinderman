@@ -4,6 +4,7 @@ import cn from "classnames"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { useInView } from "../../hooks/useInView"
+import { useMobileFooterInfo } from "../../store"
 
 const ImageGroup = ({ group }) => {
   const alignmentClass = {
@@ -14,6 +15,8 @@ const ImageGroup = ({ group }) => {
   }
 
   const { updateTheHeader } = useContext(LayoutContext)
+
+  const { setContent } = useMobileFooterInfo()
 
   const Images = () => {
     return group.images.map((item, idx) => {
@@ -27,6 +30,7 @@ const ImageGroup = ({ group }) => {
             updateTheHeader(item.description.html)
           }}
           onMouseLeave={() => updateTheHeader("<h1>Lukas Kindermann</h1>")}
+          onClick={() => setContent(item.description.html)}
         >
           <Img
             className="h-100"

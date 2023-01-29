@@ -1,10 +1,10 @@
-import React, { useEffect, useContext } from "react"
 import { graphql } from "gatsby"
+import React, { useContext, useEffect } from "react"
 import Header from "../components/Header"
-import "../prismic/fragments/imageGroupFragment"
 import ImageGroup from "../components/ImageGroup"
 import { LayoutContext } from "../layouts"
-import Footer from "../components/Footer/Footer"
+import "../prismic/fragments/imageGroupFragment"
+import MobileWorkFooter from "../components/MobileWorkFooter"
 
 export default ({ data }) => {
   const prismicContent = data.prismicHomepage.data.body
@@ -39,9 +39,7 @@ export default ({ data }) => {
             <ImageGroup key={idx} group={group} />
           ))}
         </div>
-        <span className="mobile-project-footer d-block d-lg-none">
-          <h1>{headerContent}</h1>
-        </span>
+        <MobileWorkFooter />
       </div>
     </>
   )

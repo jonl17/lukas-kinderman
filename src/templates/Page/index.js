@@ -1,7 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { RichText } from "prismic-reactjs"
-import { Link } from "gatsby"
 import SliceZone from "../../components/sliceZone"
 import ExitButton from "../../components/ExitButton"
 import { withPreview } from "gatsby-source-prismic"
