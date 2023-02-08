@@ -5,12 +5,6 @@ export const fragment = graphql`
   fragment imageGroupFragment on PrismicHomepageBodyImageGroup {
     primary {
       align
-      work {
-        id
-        document {
-          ...prismicWorkFragment
-        }
-      }
     }
     items {
       image {

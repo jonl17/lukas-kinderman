@@ -9,12 +9,14 @@
 @import "./components/image-group";
 @import "./components/rich-text";
 @import "./components/footer";
+@import "./components/image-grid";
+@import "./components/work-text";
 
 $margin: 2rem;
 
 p {
   font-family: Reader;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 40px;
   font-weight: 500;
   margin-bottom: $margin;
