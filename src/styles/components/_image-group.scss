@@ -1,5 +1,6 @@
 .image {
   object-fit: contain;
+  max-height: 100vh;
 
   @include media-breakpoint-down(md) {
     height: 50vh;

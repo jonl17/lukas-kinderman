@@ -9,7 +9,7 @@
     "title": {
       "type": "StructuredText",
       "config": {
-        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
         "label": "Title",
         "placeholder": "Homepage"
       }
@@ -18,9 +18,7 @@
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": {
-          "image_group": []
-        },
+        "labels": null,
         "choices": {
           "image_group": {
             "type": "Slice",
@@ -29,14 +27,6 @@
             "icon": "border_top",
             "display": "list",
             "non-repeat": {
-              "work": {
-                "type": "Link",
-                "config": {
-                  "select": "document",
-                  "customtypes": ["work"],
-                  "label": "Work"
-                }
-              },
               "align": {
                 "type": "Select",
                 "config": {
@@ -58,10 +48,68 @@
               "description": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, rtl",
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl",
                   "allowTargetBlank": true,
                   "label": "Description",
                   "placeholder": "Will appear on hover"
+                }
+              }
+            }
+          },
+          "image_grid": {
+            "type": "Slice",
+            "fieldset": "image grid",
+            "description": "choose images and their layout",
+            "icon": "monochrome_photos",
+            "display": "list",
+            "non-repeat": {
+              "hint": {
+                "type": "Text",
+                "config": {
+                  "label": "hint",
+                  "placeholder": "container alignment has no effect if width=100%"
+                }
+              },
+              "container_width": {
+                "type": "Select",
+                "config": {
+                  "options": ["100%", "75%", "50%", "25%"],
+                  "default_value": "100%",
+                  "label": "container width"
+                }
+              },
+              "container_alignment": {
+                "type": "Select",
+                "config": {
+                  "options": ["left", "center", "right"],
+                  "default_value": "left",
+                  "label": "container alignment"
+                }
+              }
+            },
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "image"
+                }
+              },
+              "primary_text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "primary text",
+                  "placeholder": "large text that appears in top left corner"
+                }
+              },
+              "secondary_text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "secondary text",
+                  "placeholder": "small text that appears in lower left corner (optional)"
                 }
               }
             }

@@ -18,10 +18,11 @@ const ImageGroup = ({ group }) => {
 
   const { setContent } = useMobileFooterInfo()
 
+  const length = group.images.length
+
   const Images = () => {
     return group.images.map((item, idx) => {
-      const imageClass =
-        group.images.length > 1 ? "image--quarter" : "image--three-quarter"
+      const imageClass = length > 1 ? "image--quarter" : "image--three-quarter"
       return (
         <div
           key={idx}
@@ -33,7 +34,7 @@ const ImageGroup = ({ group }) => {
           onClick={() => setContent(item.description.html)}
         >
           <Img
-            className="h-100"
+            className="h-100 border"
             fluid={item.image.fluid}
             alt={item.image.alt}
             style={{ objectFit: "contain" }}
